@@ -1,0 +1,70 @@
+# Southeast Asia News Crawler Configuration
+
+sources:
+  thailand:
+    - name: "Reuters Thailand"
+      url: "https://www.reuters.com/world/asia-pacific/"
+      type: "web"
+      selector: "article"
+      
+    - name: "Bangkok Post"
+      url: "https://www.bangkokpost.com/"
+      type: "web"
+      selector: "article"
+      
+    - name: "Thai PBS"
+      url: "https://www.thaipbsworld.com/"
+      type: "web"
+      selector: "article"
+
+  cambodia:
+    - name: "Khmer Times"
+      url: "https://www.khmertimeskh.com/"
+      type: "web"
+      selector: "article"
+      
+    - name: "Reuters Cambodia"
+      url: "https://www.reuters.com/world/asia-pacific/"
+      type: "web"
+      selector: "article"
+
+  indonesia:
+    - name: "Antara News"
+      url: "https://www.antaranews.com/"
+      type: "web"
+      selector: "article"
+      
+    - name: "Straits Times"
+      url: "https://www.straitstimes.com/asia/southeast-asia"
+      type: "web"
+      selector: "article"
+      
+    - name: "Reuters Indonesia"
+      url: "https://www.reuters.com/world/asia-pacific/"
+      type: "web"
+      selector: "article"
+
+priority_topics:
+  - "政治"
+  - "外交"
+  - "区域安全"
+  - "军事安全"
+  - "跨国犯罪"
+  - "经济安全"
+  - "区域合作"
+  - "安全"
+
+keywords:
+  - "政治|外交|区域|安全|军事|犯罪|诈骗|毒品|经济|能源|供应链|合作"
+
+requirements:
+  min_per_country: 5
+  min_reuters: 1
+  min_local_media: 2
+  content_length: "300-350"
+  
+crawler:
+  timeout: 10
+  retry_count: 3
+  delay_between_requests: 1
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
